@@ -10,7 +10,7 @@
         v-model="hotel.number_rooms"
         :rules="[rules.required, rules.numberRule]"
       />
-      <v-btn color="primary" @click="saveHotel">Save</v-btn>
+      <v-btn color="primary" @click="saveHotel">Guardar</v-btn>
     </v-form>
   </v-container>
 </template>

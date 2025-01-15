@@ -119,9 +119,9 @@ export default {
           title: 'Tipo de habitación',
           value: 'type_room.name',
         },
-        { title: 'Acomodación', value: 'accommodation.name' },
-        { title: 'Cantidad', value: 'quantity' },
-        { title: 'Acciones', value: 'actions', sortable: false },
+        { title: 'Acomodación', value: 'accommodation.name', align: 'start' },
+        { title: 'Cantidad', value: 'quantity', align: 'center' },
+        { title: 'Acciones', value: 'actions', sortable: false, align: 'center' },
       ],
     }
   },
@@ -202,6 +202,7 @@ export default {
         })
     },
     deleteRoom(id) {
+      if (!confirm('¿Estas seguro de eliminar esta habitación?')) return
       this.axios.delete(`/rooms/${id}`).then(() => {
         this.fetchRooms()
       })
